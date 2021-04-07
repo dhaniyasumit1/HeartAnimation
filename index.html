@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heart Shape & Heartbeat Animation</title>
+    <style>
+        *{
+            margin: 0px; padding: 0px;
+            box-sizing: border-box;
+        }
+        html{
+            font-size: 62.5%;
+        }
+        .container{
+            width: 100vw; 
+            height: 100vh;
+            background-color: hsl(212, 29%, 94%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .main{
+            width: 10rem; 
+            height: 10rem;
+            background-color: #ee5253;
+            position: relative;
+            transform: rotate(45deg);
+            animation: hrtbt 1s linear infinite;
+        }
+        .main::before{
+            content: "";
+            width: 100%; 
+            height: 100%;
+            background-color: #ee5253;
+            position: absolute;
+            border-radius: 50%;
+            transform: translateY(-50%);
+        }
+        .main::after{
+            content: "";
+            width: 100%; 
+            height: 100%;
+            background-color: #ee5253;
+            position: absolute;
+            border-radius: 50%;
+            transform: translateX(-50%);
+        }
+
+        @keyframes hrtbt {
+            /* rotate again - cause we have already used this property by 
+            which the animation is working in left side */
+            0%{
+                transform: rotate(45deg) scale(1); 
+            }
+            20%{
+                transform: rotate(45deg) scale(1);
+            }
+            40%{
+                transform: rotate(45deg) scale(1.4);
+            }
+            60%{
+                transform: rotate(45deg) scale(1.2);
+            }
+            80%{
+                transform: rotate(45deg) scale(1.4);
+            }
+            100%{
+                transform: rotate(45deg) scale(1);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="main"></div>
+    </div>
+</body>
+</html>
